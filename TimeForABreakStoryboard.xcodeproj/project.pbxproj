@@ -15,6 +15,8 @@
 		4E67EADF27DD9FB1007821F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EADE27DD9FB1007821F3 /* User.swift */; };
 		4E67EAE227DDAC5B007821F3 /* BreakActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EAE127DDAC5B007821F3 /* BreakActionCell.swift */; };
 		4E67EAE427DDAEF1007821F3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EAE327DDAEF1007821F3 /* DataProvider.swift */; };
+		4E75FF1227DEE7D300CA518C /* BreakActionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75FF1127DEE7D300CA518C /* BreakActionDetailViewController.swift */; };
+		4E75FF1527DEEDF000CA518C /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E75FF1427DEEDF000CA518C /* PaddedLabel.swift */; };
 		4E89AD3127D9C1F1006DA463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */; };
 		4E89AD3327D9C1F1006DA463 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3227D9C1F1006DA463 /* SceneDelegate.swift */; };
 		4E89AD3527D9C1F1006DA463 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3427D9C1F1006DA463 /* ViewController.swift */; };
@@ -32,6 +34,8 @@
 		4E67EADE27DD9FB1007821F3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4E67EAE127DDAC5B007821F3 /* BreakActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakActionCell.swift; sourceTree = "<group>"; };
 		4E67EAE327DDAEF1007821F3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
+		4E75FF1127DEE7D300CA518C /* BreakActionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakActionDetailViewController.swift; sourceTree = "<group>"; };
+		4E75FF1427DEEDF000CA518C /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
 		4E89AD2D27D9C1F1006DA463 /* TimeForABreakStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeForABreakStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E89AD3227D9C1F1006DA463 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +75,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		4E75FF1327DEEDDB00CA518C /* UIHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				4E75FF1427DEEDF000CA518C /* PaddedLabel.swift */,
+			);
+			path = UIHelpers;
+			sourceTree = "<group>";
+		};
 		4E89AD2427D9C1F1006DA463 = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +102,7 @@
 		4E89AD2F27D9C1F1006DA463 /* TimeForABreakStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				4E75FF1327DEEDDB00CA518C /* UIHelpers */,
 				4E67EAE027DDAC48007821F3 /* Cell */,
 				4E67EADB27DD9E88007821F3 /* Data */,
 				4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */,
@@ -103,6 +116,7 @@
 				4E46D4DB27DB2CA8004EB94E /* TimerViewController.swift */,
 				4E63916B27DC51A700844E77 /* ActionCollectionViewController.swift */,
 				4E63916D27DC580800844E77 /* OptionsViewController.swift */,
+				4E75FF1127DEE7D300CA518C /* BreakActionDetailViewController.swift */,
 			);
 			path = TimeForABreakStoryboard;
 			sourceTree = "<group>";
@@ -178,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E75FF1527DEEDF000CA518C /* PaddedLabel.swift in Sources */,
 				4E63916C27DC51A700844E77 /* ActionCollectionViewController.swift in Sources */,
 				4E46D4DC27DB2CA8004EB94E /* TimerViewController.swift in Sources */,
 				4E89AD3527D9C1F1006DA463 /* ViewController.swift in Sources */,
@@ -187,6 +202,7 @@
 				4E67EADF27DD9FB1007821F3 /* User.swift in Sources */,
 				4E89AD3327D9C1F1006DA463 /* SceneDelegate.swift in Sources */,
 				4E46D4DA27DB0A54004EB94E /* HomeViewController.swift in Sources */,
+				4E75FF1227DEE7D300CA518C /* BreakActionDetailViewController.swift in Sources */,
 				4E67EADD27DD9EBE007821F3 /* BreakAction.swift in Sources */,
 				4E67EAE227DDAC5B007821F3 /* BreakActionCell.swift in Sources */,
 			);

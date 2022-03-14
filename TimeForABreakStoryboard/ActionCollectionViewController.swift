@@ -57,6 +57,7 @@ extension ActionCollectionViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return data[section].0
     }
+
 }
 
 
