@@ -20,7 +20,7 @@ class ActionCollectionViewController : UIViewController {
         title = "Break Actions"
     }
     
-    func completionHandler(_ indexSection: Int, _ indexRow: Int) {
+    func deletionHandler(_ indexSection: Int, _ indexRow: Int) {
         // Make a copy of the section to change
         var sectionToChange = data[indexSection].1
         // Remove the deleted row
@@ -56,6 +56,20 @@ extension ActionCollectionViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return data[section].0
+    }
+    
+    // Swipe left to delete
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action = UIContextualAction(style: .normal, title: "Delete") { [weak self] (action,view,completionHandler) in
+            self?.deletionHandler(indexPath.section,indexPath.row)
+            completionHandler(true)
+        }
+        
+        action.backgroundColor = .red
+               
+        
+        return UISwipeActionsConfiguration(actions: [action])
     }
 
 }

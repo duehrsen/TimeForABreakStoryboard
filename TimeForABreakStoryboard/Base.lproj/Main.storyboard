@@ -302,6 +302,14 @@
             <point key="canvasLocation" x="-633.33333333333337" y="45.535714285714285"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="SMb-uk-iD1">
+            <size key="intrinsicContentSize" width="222.66666666666666" height="37"/>
+        </designable>
+        <designable name="lLz-e5-6pc">
+            <size key="intrinsicContentSize" width="52.333333333333336" height="20.333333333333332"/>
+        </designable>
+    </designables>
     <resources>
         <image name="good morning" width="2400" height="3600"/>
         <systemColor name="systemBackgroundColor">
