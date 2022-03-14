@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E46D4DA27DB0A54004EB94E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46D4D927DB0A54004EB94E /* HomeViewController.swift */; };
+		4E46D4DC27DB2CA8004EB94E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E46D4DB27DB2CA8004EB94E /* TimerViewController.swift */; };
+		4E63916C27DC51A700844E77 /* ActionCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E63916B27DC51A700844E77 /* ActionCollectionViewController.swift */; };
+		4E63916E27DC580800844E77 /* OptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E63916D27DC580800844E77 /* OptionsViewController.swift */; };
+		4E67EADD27DD9EBE007821F3 /* BreakAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EADC27DD9EBE007821F3 /* BreakAction.swift */; };
+		4E67EADF27DD9FB1007821F3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EADE27DD9FB1007821F3 /* User.swift */; };
+		4E67EAE227DDAC5B007821F3 /* BreakActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EAE127DDAC5B007821F3 /* BreakActionCell.swift */; };
+		4E67EAE427DDAEF1007821F3 /* DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E67EAE327DDAEF1007821F3 /* DataProvider.swift */; };
 		4E89AD3127D9C1F1006DA463 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */; };
 		4E89AD3327D9C1F1006DA463 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3227D9C1F1006DA463 /* SceneDelegate.swift */; };
 		4E89AD3527D9C1F1006DA463 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E89AD3427D9C1F1006DA463 /* ViewController.swift */; };
@@ -16,6 +24,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E46D4D927DB0A54004EB94E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		4E46D4DB27DB2CA8004EB94E /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		4E63916B27DC51A700844E77 /* ActionCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCollectionViewController.swift; sourceTree = "<group>"; };
+		4E63916D27DC580800844E77 /* OptionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsViewController.swift; sourceTree = "<group>"; };
+		4E67EADC27DD9EBE007821F3 /* BreakAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakAction.swift; sourceTree = "<group>"; };
+		4E67EADE27DD9FB1007821F3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4E67EAE127DDAC5B007821F3 /* BreakActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreakActionCell.swift; sourceTree = "<group>"; };
+		4E67EAE327DDAEF1007821F3 /* DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProvider.swift; sourceTree = "<group>"; };
 		4E89AD2D27D9C1F1006DA463 /* TimeForABreakStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeForABreakStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4E89AD3227D9C1F1006DA463 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +53,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E67EADB27DD9E88007821F3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				4E67EADC27DD9EBE007821F3 /* BreakAction.swift */,
+				4E67EADE27DD9FB1007821F3 /* User.swift */,
+				4E67EAE327DDAEF1007821F3 /* DataProvider.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		4E67EAE027DDAC48007821F3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				4E67EAE127DDAC5B007821F3 /* BreakActionCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		4E89AD2427D9C1F1006DA463 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +90,8 @@
 		4E89AD2F27D9C1F1006DA463 /* TimeForABreakStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				4E67EAE027DDAC48007821F3 /* Cell */,
+				4E67EADB27DD9E88007821F3 /* Data */,
 				4E89AD3027D9C1F1006DA463 /* AppDelegate.swift */,
 				4E89AD3227D9C1F1006DA463 /* SceneDelegate.swift */,
 				4E89AD3427D9C1F1006DA463 /* ViewController.swift */,
@@ -63,6 +99,10 @@
 				4E89AD3927D9C1F2006DA463 /* Assets.xcassets */,
 				4E89AD3B27D9C1F2006DA463 /* LaunchScreen.storyboard */,
 				4E89AD3E27D9C1F2006DA463 /* Info.plist */,
+				4E46D4D927DB0A54004EB94E /* HomeViewController.swift */,
+				4E46D4DB27DB2CA8004EB94E /* TimerViewController.swift */,
+				4E63916B27DC51A700844E77 /* ActionCollectionViewController.swift */,
+				4E63916D27DC580800844E77 /* OptionsViewController.swift */,
 			);
 			path = TimeForABreakStoryboard;
 			sourceTree = "<group>";
@@ -138,9 +178,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E63916C27DC51A700844E77 /* ActionCollectionViewController.swift in Sources */,
+				4E46D4DC27DB2CA8004EB94E /* TimerViewController.swift in Sources */,
 				4E89AD3527D9C1F1006DA463 /* ViewController.swift in Sources */,
+				4E63916E27DC580800844E77 /* OptionsViewController.swift in Sources */,
 				4E89AD3127D9C1F1006DA463 /* AppDelegate.swift in Sources */,
+				4E67EAE427DDAEF1007821F3 /* DataProvider.swift in Sources */,
+				4E67EADF27DD9FB1007821F3 /* User.swift in Sources */,
 				4E89AD3327D9C1F1006DA463 /* SceneDelegate.swift in Sources */,
+				4E46D4DA27DB0A54004EB94E /* HomeViewController.swift in Sources */,
+				4E67EADD27DD9EBE007821F3 /* BreakAction.swift in Sources */,
+				4E67EAE227DDAC5B007821F3 /* BreakActionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
