@@ -58,6 +58,14 @@ extension ActionCollectionViewController: UITableViewDelegate {
         return data[section].0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let actionData = data[indexPath.section].1[indexPath.row]
+        
+        var viewController = BreakActionDetailViewController()
+        viewController.breakAction = actionData
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     // Swipe left to delete
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         

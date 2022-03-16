@@ -109,6 +109,20 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="START"/>
+                                <connections>
+                                    <action selector="playAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="rMp-CI-nBG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-3N-wd7">
+                                <rect key="frame" x="40" y="398" width="348" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="STOP"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="ePi-La-iU9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vkM-Vz-9DC"/>
@@ -125,6 +139,7 @@
                     <navigationItem key="navigationItem" id="GVh-GC-bH7"/>
                     <connections>
                         <outlet property="playBtn" destination="Ddy-K7-Bb1" id="EgI-GE-i8L"/>
+                        <outlet property="stopBtn" destination="fcE-3N-wd7" id="G3o-LU-JM2"/>
                         <outlet property="timerLbl" destination="fn7-24-8b5" id="rLZ-mg-zXl"/>
                     </connections>
                 </viewController>
@@ -224,6 +239,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="azu-fI-5c3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1113" y="82"/>
+        </scene>
+        <!--Break Action Detail View Controller-->
+        <scene sceneID="XFF-dD-OLw">
+            <objects>
+                <viewController id="jbb-KZ-Imb" customClass="BreakActionDetailViewController" customModule="TimeForABreakStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2SP-2h-bYZ">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FJw-9T-TsG">
+                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVR-kG-RQk">
+                                        <rect key="frame" x="0.0" y="0.0" width="428" height="787"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vca-LJ-JkJ">
+                                        <rect key="frame" x="0.0" y="787" width="428" height="20.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b09-Fc-Azq">
+                                        <rect key="frame" x="0.0" y="807.33333333333337" width="428" height="20.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lXd-fb-4WV">
+                                        <rect key="frame" x="0.0" y="827.66666666666663" width="428" height="20.333333333333371"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5d9-SQ-96f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="5d9-SQ-96f" firstAttribute="trailing" secondItem="FJw-9T-TsG" secondAttribute="trailing" id="AAY-6C-Y9v"/>
+                            <constraint firstItem="5d9-SQ-96f" firstAttribute="bottom" secondItem="FJw-9T-TsG" secondAttribute="bottom" id="E1l-Yz-sob"/>
+                            <constraint firstItem="FJw-9T-TsG" firstAttribute="top" secondItem="5d9-SQ-96f" secondAttribute="top" id="f8W-MW-nub"/>
+                            <constraint firstItem="FJw-9T-TsG" firstAttribute="leading" secondItem="5d9-SQ-96f" secondAttribute="leading" id="ngW-uF-MRI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="categoryLabel" destination="ZVR-kG-RQk" id="zpo-68-NzK"/>
+                        <outlet property="descriptionLabel" destination="b09-Fc-Azq" id="xql-nf-OqC"/>
+                        <outlet property="durationLabel" destination="lXd-fb-4WV" id="ff2-He-nGS"/>
+                        <outlet property="titleLabel" destination="vca-LJ-JkJ" id="qez-3p-MSW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MaM-Cq-zfZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1856" y="82"/>
         </scene>
         <!--Options View Controller-->
         <scene sceneID="tTs-Nb-qjk">
