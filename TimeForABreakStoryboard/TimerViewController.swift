@@ -7,12 +7,17 @@
 
 import UIKit
 
+enum IntervalType : Int {
+    case work = 600
+    case notwork = 120
+}
+
 enum IntervalState {
     case inactive
-    case working
-    case breaking
+    case active
     case paused
 }
+
 
 class TimerViewController : UIViewController {
     
@@ -20,20 +25,42 @@ class TimerViewController : UIViewController {
     var timeElapsed = 0
     var interval = 0
     
-    var binaryDescendingTime = 0
+    var binaryDescendingTime = 1
     
     var userActivityState = IntervalState.inactive
-    let workInterval = 60*20
+    var intervalType = IntervalType.work
+    var maxTimeInInterval = 0
     var startDate = Date()
     
     @IBOutlet weak var playBtn : UIButton!
     @IBOutlet weak var stopBtn : UIButton!
+    
+    @IBOutlet weak var breakBtn : UIButton!
+    @IBOutlet weak var workBtn : UIButton!
+    
     @IBOutlet weak var timerLbl : UILabel!
+    @IBOutlet weak var workBreakLbl : UILabel!
+    
+    @IBAction func playAction(_ sender : UIButton) {
+        playButtonPressed()
+    }
+    
+    @IBAction func stopAction(_ sender : UIButton) {
+        stopButtonPressed()
+    }
+    
+    @IBAction func breakAction(_ sender : UIButton) {
+        switchToBreak()
+    }
+    
+    @IBAction func workAction(_ sender : UIButton) {
+        switchToWork()
+    }
     
     var timer = Timer()
     
     func getTimeToDisplay() -> Int {
-        abs(binaryDescendingTime * workInterval - (timeElapsed + interval))
+        abs(binaryDescendingTime * intervalType.rawValue - (timeElapsed + interval))
     }
        
     func convertSecondsToTime(timeinSeconds : Int) -> String {
@@ -43,17 +70,47 @@ class TimerViewController : UIViewController {
         return String(format: "%02i:%02i", minutes,seconds)
     }
     
+    func clearTimes() {
+        totalTimeElapsed = 0
+        timeElapsed = 0
+        interval = 0
+    }
+    
     func updateTimerLabel() {
         print("Update Timer Label invoked")
         interval =  -Int(startDate.timeIntervalSinceNow)
         timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
-        if getTimeToDisplay() >= workInterval
+        if getTimeToDisplay() >= intervalType.rawValue
         {
-            timer.invalidate()
-            print("Work is done")
-            playBtn.isHidden = true
-            stopBtn.isHidden = true
+            switchToBreak()
         }
+    }
+    
+    func switchToBreak() {
+        timer.invalidate()
+        clearTimes()
+        intervalType = IntervalType.notwork
+        maxTimeInInterval = intervalType.rawValue
+        breakBtn.isHidden = true
+        workBtn.isHidden = false
+        playBtn.isHidden = true
+        stopBtn.isHidden = true
+        workBreakLbl.text = "Time to relax"
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
+        playButtonPressed()
+    }
+    
+    func switchToWork() {
+        timer.invalidate()
+        clearTimes()
+        intervalType = IntervalType.work
+        maxTimeInInterval = intervalType.rawValue
+        breakBtn.isHidden = false
+        workBtn.isHidden = true
+        playBtn.isHidden = false
+        stopBtn.isHidden = true
+        workBreakLbl.text = "Time to work"
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
     }
     
     @objc func timerAction(_ timer: Timer) {
@@ -65,22 +122,14 @@ class TimerViewController : UIViewController {
         print("Foreground timer invoked")
         self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerAction(_:)), userInfo: nil, repeats: true)
     }
-    
-    @IBAction func playAction(_ sender : UIButton) {
-        playButtonPressed()
-    }
-    
-    @IBAction func stopAction(_ sender : UIButton) {
-        stopButtonPressed()
-    }
-    
+      
     func playButtonPressed() {
         if userActivityState == IntervalState.inactive {
             startDate = Date()
         } else if userActivityState == IntervalState.paused {
             startDate = Date()
         }
-        userActivityState = IntervalState.working
+        userActivityState = IntervalState.active
         print("Start working")
         playBtn.isHidden = true
         stopBtn.isHidden = false
@@ -97,7 +146,6 @@ class TimerViewController : UIViewController {
         print("Take a break")
         playBtn.isHidden = false
         stopBtn.isHidden = true
-
     }
     
     
@@ -106,9 +154,15 @@ class TimerViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        stopBtn.isHidden = true
-        playBtn.isHidden = false
+        maxTimeInInterval = intervalType.rawValue
         
+        stopBtn.isHidden = true
+        workBtn.isHidden = true
+        playBtn.isHidden = false
+        breakBtn.isHidden = false
+        
+        
+        workBreakLbl.text = "Time To Work"
         timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
         timer.invalidate()
     }

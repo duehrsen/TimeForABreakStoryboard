@@ -97,6 +97,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time to work" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zad-XY-9H1">
+                                <rect key="frame" x="57.333333333333343" y="138" width="313.66666666666663" height="60"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fn7-24-8b5">
                                 <rect key="frame" x="126" y="238" width="176" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="67"/>
@@ -104,24 +110,55 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ddy-K7-Bb1">
-                                <rect key="frame" x="40" y="398" width="348" height="31"/>
+                                <rect key="frame" x="40" y="398" width="348" height="50"/>
                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ePV-nf-F1i"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="START"/>
+                                <buttonConfiguration key="configuration" style="plain" title="START TIMER"/>
                                 <connections>
                                     <action selector="playAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="rMp-CI-nBG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-3N-wd7">
-                                <rect key="frame" x="40" y="398" width="348" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-3N-wd7">
+                                <rect key="frame" x="40" y="398" width="348" height="50"/>
                                 <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="aQZ-L1-sox"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="STOP"/>
+                                <buttonConfiguration key="configuration" style="plain" title="PAUSE TIMER"/>
                                 <connections>
                                     <action selector="stopAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="ePi-La-iU9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjk-yi-BbS">
+                                <rect key="frame" x="40" y="498" width="348" height="50"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9pz-DN-8cB"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SKIP TO BREAK"/>
+                                <connections>
+                                    <action selector="breakAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="TaJ-Om-7Ff"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HK0-HQ-ExW">
+                                <rect key="frame" x="40" y="498" width="348" height="50"/>
+                                <color key="backgroundColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="CHA-Gv-bEf"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SKIP TO WORK"/>
+                                <connections>
+                                    <action selector="workAction:" destination="eb6-Pi-ZOA" eventType="touchUpInside" id="lTi-gz-r7Y"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,18 +166,33 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Ddy-K7-Bb1" firstAttribute="top" secondItem="fn7-24-8b5" secondAttribute="bottom" constant="80" id="54k-5R-zWw"/>
+                            <constraint firstItem="vkM-Vz-9DC" firstAttribute="trailing" secondItem="HK0-HQ-ExW" secondAttribute="trailing" constant="40" id="5XW-N3-65d"/>
                             <constraint firstItem="Ddy-K7-Bb1" firstAttribute="leading" secondItem="vkM-Vz-9DC" secondAttribute="leading" constant="40" id="8Ch-80-Uah"/>
+                            <constraint firstItem="HK0-HQ-ExW" firstAttribute="top" secondItem="Ddy-K7-Bb1" secondAttribute="bottom" constant="50" id="94v-3H-vss"/>
+                            <constraint firstItem="Zad-XY-9H1" firstAttribute="top" secondItem="vkM-Vz-9DC" secondAttribute="top" constant="50" id="9RD-10-YRr"/>
+                            <constraint firstItem="vkM-Vz-9DC" firstAttribute="trailing" secondItem="cjk-yi-BbS" secondAttribute="trailing" constant="40" id="9ze-yd-UUy"/>
                             <constraint firstItem="fn7-24-8b5" firstAttribute="top" secondItem="vkM-Vz-9DC" secondAttribute="top" constant="150" id="DE7-w8-qkf"/>
+                            <constraint firstItem="HK0-HQ-ExW" firstAttribute="leading" secondItem="vkM-Vz-9DC" secondAttribute="leading" constant="40" id="DMO-5P-0Mh"/>
+                            <constraint firstItem="cjk-yi-BbS" firstAttribute="leading" secondItem="vkM-Vz-9DC" secondAttribute="leading" constant="40" id="ErS-7O-GJd"/>
+                            <constraint firstItem="Zad-XY-9H1" firstAttribute="centerX" secondItem="7yx-yB-lqB" secondAttribute="centerX" id="ID0-tz-Adh"/>
+                            <constraint firstItem="vkM-Vz-9DC" firstAttribute="trailing" secondItem="fcE-3N-wd7" secondAttribute="trailing" constant="40" id="Mu7-tI-ILg"/>
                             <constraint firstItem="fn7-24-8b5" firstAttribute="centerX" secondItem="7yx-yB-lqB" secondAttribute="centerX" id="Or2-5k-fqH"/>
+                            <constraint firstItem="fcE-3N-wd7" firstAttribute="leading" secondItem="vkM-Vz-9DC" secondAttribute="leading" constant="40" id="UST-KC-Sk0"/>
+                            <constraint firstItem="fcE-3N-wd7" firstAttribute="top" secondItem="fn7-24-8b5" secondAttribute="bottom" constant="80" id="dGt-0s-Orn"/>
+                            <constraint firstItem="cjk-yi-BbS" firstAttribute="top" secondItem="Ddy-K7-Bb1" secondAttribute="bottom" constant="50" id="hwf-TY-pDR"/>
                             <constraint firstItem="vkM-Vz-9DC" firstAttribute="trailing" secondItem="Ddy-K7-Bb1" secondAttribute="trailing" constant="40" id="t7U-Fk-iCg"/>
                             <constraint firstItem="Ddy-K7-Bb1" firstAttribute="centerX" secondItem="7yx-yB-lqB" secondAttribute="centerX" id="vFR-5w-xVd"/>
+                            <constraint firstItem="fn7-24-8b5" firstAttribute="top" secondItem="Zad-XY-9H1" secondAttribute="bottom" constant="40" id="xF5-Fl-yRX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="GVh-GC-bH7"/>
                     <connections>
+                        <outlet property="breakBtn" destination="cjk-yi-BbS" id="KPy-69-Nm6"/>
                         <outlet property="playBtn" destination="Ddy-K7-Bb1" id="EgI-GE-i8L"/>
                         <outlet property="stopBtn" destination="fcE-3N-wd7" id="G3o-LU-JM2"/>
                         <outlet property="timerLbl" destination="fn7-24-8b5" id="rLZ-mg-zXl"/>
+                        <outlet property="workBreakLbl" destination="Zad-XY-9H1" id="fLC-nR-449"/>
+                        <outlet property="workBtn" destination="HK0-HQ-ExW" id="Civ-FK-T4R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEP-bg-J2S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

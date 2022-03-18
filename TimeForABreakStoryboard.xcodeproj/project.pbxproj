@@ -23,6 +23,7 @@
 		4E89AD3827D9C1F1006DA463 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E89AD3627D9C1F1006DA463 /* Main.storyboard */; };
 		4E89AD3A27D9C1F2006DA463 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E89AD3927D9C1F2006DA463 /* Assets.xcassets */; };
 		4E89AD3D27D9C1F2006DA463 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E89AD3B27D9C1F2006DA463 /* LaunchScreen.storyboard */; };
+		4E8CC94A27E452E6006BC74C /* StandardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E8CC94927E452E6006BC74C /* StandardButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4E89AD3927D9C1F2006DA463 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E89AD3C27D9C1F2006DA463 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E89AD3E27D9C1F2006DA463 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E8CC94927E452E6006BC74C /* StandardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				4E75FF1427DEEDF000CA518C /* PaddedLabel.swift */,
+				4E8CC94927E452E6006BC74C /* StandardButton.swift */,
 			);
 			path = UIHelpers;
 			sourceTree = "<group>";
@@ -204,6 +207,7 @@
 				4E46D4DA27DB0A54004EB94E /* HomeViewController.swift in Sources */,
 				4E75FF1227DEE7D300CA518C /* BreakActionDetailViewController.swift in Sources */,
 				4E67EADD27DD9EBE007821F3 /* BreakAction.swift in Sources */,
+				4E8CC94A27E452E6006BC74C /* StandardButton.swift in Sources */,
 				4E67EAE227DDAC5B007821F3 /* BreakActionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
