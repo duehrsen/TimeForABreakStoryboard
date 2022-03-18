@@ -16,6 +16,12 @@ enum IntervalState {
 
 class TimerViewController : UIViewController {
     
+    var totalTimeElapsed = 0
+    var timeElapsed = 0
+    var interval = 0
+    
+    var binaryDescendingTime = 0
+    
     var userActivityState = IntervalState.inactive
     let workInterval = 60*20
     var startDate = Date()
@@ -25,6 +31,10 @@ class TimerViewController : UIViewController {
     @IBOutlet weak var timerLbl : UILabel!
     
     var timer = Timer()
+    
+    func getTimeToDisplay() -> Int {
+        abs(binaryDescendingTime * workInterval - (timeElapsed + interval))
+    }
        
     func convertSecondsToTime(timeinSeconds : Int) -> String {
         let minutes = timeinSeconds / 60
@@ -35,8 +45,15 @@ class TimerViewController : UIViewController {
     
     func updateTimerLabel() {
         print("Update Timer Label invoked")
-        let interval = -Int(startDate.timeIntervalSinceNow)
-        timerLbl.text = convertSecondsToTime(timeinSeconds: interval)
+        interval =  -Int(startDate.timeIntervalSinceNow)
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
+        if getTimeToDisplay() >= workInterval
+        {
+            timer.invalidate()
+            print("Work is done")
+            playBtn.isHidden = true
+            stopBtn.isHidden = true
+        }
     }
     
     @objc func timerAction(_ timer: Timer) {
@@ -60,6 +77,8 @@ class TimerViewController : UIViewController {
     func playButtonPressed() {
         if userActivityState == IntervalState.inactive {
             startDate = Date()
+        } else if userActivityState == IntervalState.paused {
+            startDate = Date()
         }
         userActivityState = IntervalState.working
         print("Start working")
@@ -71,6 +90,8 @@ class TimerViewController : UIViewController {
     }
     
     func stopButtonPressed() {
+        timeElapsed += interval
+        print("Time elapsed \(String(timeElapsed))")
         timer.invalidate()
         userActivityState = IntervalState.paused
         print("Take a break")
@@ -88,7 +109,7 @@ class TimerViewController : UIViewController {
         stopBtn.isHidden = true
         playBtn.isHidden = false
         
-        timerLbl.text = "00:00"
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
         timer.invalidate()
     }
     
