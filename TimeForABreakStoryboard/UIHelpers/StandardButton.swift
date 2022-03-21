@@ -7,10 +7,7 @@
 
 import SwiftUI
 
-
 class StandardButton : ButtonStyle {
-    
-    
     func makeBody(configuration: Configuration) -> some View {
         configuration
             .label
@@ -19,6 +16,4 @@ class StandardButton : ButtonStyle {
             .background(Color.accentColor)
             .cornerRadius(10)
     }
-    
-    
 }

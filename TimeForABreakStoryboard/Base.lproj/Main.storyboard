@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a3f-R3-vbP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="a3f-R3-vbP">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -361,48 +361,115 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="M5r-dl-vhF">
                                 <rect key="frame" x="20" y="108" width="388" height="764"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA3-Jf-zwk">
-                                        <rect key="frame" x="134.66666666666666" y="0.0" width="119" height="206.66666666666666"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Direction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cA3-Jf-zwk">
+                                        <rect key="frame" x="100.66666666666667" y="0.0" width="186.66666666666663" height="105.66666666666667"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="105.66666666666667" id="8Gt-cM-1uY"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Count up or down" translatesAutoresizingMaskIntoConstraints="NO" id="pF6-On-BSB">
-                                        <rect key="frame" x="169.66666666666666" y="206.66666666666669" width="51" height="178.33333333333331"/>
-                                    </switch>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="J0r-pK-WsM">
+                                        <rect key="frame" x="20" y="105.66666666666666" width="348" height="98.666666666666657"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count Down" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nEe-t6-z9f">
+                                                <rect key="frame" x="0.0" y="35" width="128.66666666666666" height="28.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" title="Count up or down" translatesAutoresizingMaskIntoConstraints="NO" id="pF6-On-BSB">
+                                                <rect key="frame" x="164.33333333333334" y="34" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="switchAction:" destination="bZN-ym-Qai" eventType="valueChanged" id="bu5-bW-Kok"/>
+                                                </connections>
+                                            </switch>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mtp-r5-IW8">
+                                                <rect key="frame" x="248.66666666666671" y="35" width="99.333333333333343" height="28.666666666666671"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Break Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9P3-uI-Rvb">
-                                        <rect key="frame" x="122.00000000000001" y="385" width="144.33333333333337" height="80"/>
+                                        <rect key="frame" x="122.00000000000001" y="204.33333333333331" width="144.33333333333337" height="106"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="106" id="b1x-3z-Koq"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Jf-YlB">
-                                        <rect key="frame" x="38" y="465" width="312" height="300"/>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="300" minValue="0.0" maxValue="600" translatesAutoresizingMaskIntoConstraints="NO" id="sBU-Jf-YlB">
+                                        <rect key="frame" x="38" y="310.33333333333331" width="312" height="101"/>
                                         <color key="tintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="dx3-2y-Wpc"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="breakTimeAction:" destination="bZN-ym-Qai" eventType="valueChanged" id="MJB-d7-q27"/>
+                                        </connections>
                                     </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes 0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKQ-BB-Ken">
+                                        <rect key="frame" x="115.00000000000001" y="410.33333333333337" width="158.33333333333337" height="59.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Work Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAr-oH-b5J">
+                                        <rect key="frame" x="125" y="470.00000000000006" width="138" height="105.66666666666669"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="105.66666666666669" id="Yrl-4j-uoN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="900" minValue="0.0" maxValue="1800" translatesAutoresizingMaskIntoConstraints="NO" id="RxU-zM-wcb">
+                                        <rect key="frame" x="38" y="575.66666666666663" width="312" height="89.333333333333371"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="88.333333333333314" id="xOd-Hu-Gon"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="workTimeAction:" destination="bZN-ym-Qai" eventType="valueChanged" id="9bW-VQ-1EP"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 minutes 0 seconds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbd-FH-v9L">
+                                        <rect key="frame" x="115.00000000000001" y="664" width="158.33333333333337" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="sBU-Jf-YlB" firstAttribute="leading" secondItem="M5r-dl-vhF" secondAttribute="leading" constant="40" id="5Dp-4K-rXZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="sBU-Jf-YlB" secondAttribute="trailing" constant="40" id="Cmi-mu-Yut"/>
-                                    <constraint firstItem="sBU-Jf-YlB" firstAttribute="top" secondItem="pF6-On-BSB" secondAttribute="bottom" constant="80" id="dHR-on-T5E"/>
-                                    <constraint firstItem="pF6-On-BSB" firstAttribute="centerX" secondItem="M5r-dl-vhF" secondAttribute="centerX" id="fg3-io-0Rl"/>
-                                    <constraint firstItem="cA3-Jf-zwk" firstAttribute="centerX" secondItem="M5r-dl-vhF" secondAttribute="centerX" id="giv-Vh-E0N"/>
-                                    <constraint firstAttribute="bottom" secondItem="sBU-Jf-YlB" secondAttribute="bottom" constant="80" id="pXl-6e-3L3"/>
+                                    <constraint firstItem="mAr-oH-b5J" firstAttribute="top" secondItem="sBU-Jf-YlB" secondAttribute="bottom" constant="59.666666666666572" id="0z5-h7-ysf"/>
+                                    <constraint firstItem="J0r-pK-WsM" firstAttribute="leading" secondItem="M5r-dl-vhF" secondAttribute="leading" constant="20" id="1ua-6e-D6K"/>
+                                    <constraint firstAttribute="trailing" secondItem="J0r-pK-WsM" secondAttribute="trailing" constant="20" id="8lA-1M-tZR"/>
+                                    <constraint firstItem="sBU-Jf-YlB" firstAttribute="leading" secondItem="M5r-dl-vhF" secondAttribute="leading" constant="40" id="lck-Ht-8ha"/>
+                                    <constraint firstItem="sBU-Jf-YlB" firstAttribute="leading" secondItem="RxU-zM-wcb" secondAttribute="leading" id="qBm-9I-Fgz"/>
                                 </constraints>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fDS-sV-LUx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="M5r-dl-vhF" firstAttribute="centerX" secondItem="0Fk-aV-zqc" secondAttribute="centerX" id="Hn0-2X-wYJ"/>
-                            <constraint firstItem="M5r-dl-vhF" firstAttribute="leading" secondItem="fDS-sV-LUx" secondAttribute="leading" constant="20" id="JRb-17-bgJ"/>
-                            <constraint firstItem="M5r-dl-vhF" firstAttribute="top" secondItem="fDS-sV-LUx" secondAttribute="top" constant="20" id="Pcj-mB-vee"/>
-                            <constraint firstItem="M5r-dl-vhF" firstAttribute="centerY" secondItem="0Fk-aV-zqc" secondAttribute="centerY" id="SA8-sO-yzB"/>
-                            <constraint firstItem="fDS-sV-LUx" firstAttribute="trailing" secondItem="M5r-dl-vhF" secondAttribute="trailing" constant="20" id="dWC-Ad-8kG"/>
-                            <constraint firstItem="fDS-sV-LUx" firstAttribute="bottom" secondItem="M5r-dl-vhF" secondAttribute="bottom" constant="20" id="vE8-y0-q5M"/>
+                            <constraint firstItem="M5r-dl-vhF" firstAttribute="trailing" secondItem="0Fk-aV-zqc" secondAttribute="trailingMargin" id="bFX-4q-GNh"/>
+                            <constraint firstItem="M5r-dl-vhF" firstAttribute="top" secondItem="fDS-sV-LUx" secondAttribute="top" constant="20" id="hlX-KC-NCa"/>
+                            <constraint firstItem="M5r-dl-vhF" firstAttribute="leading" secondItem="0Fk-aV-zqc" secondAttribute="leadingMargin" id="lid-Qv-xOQ"/>
+                            <constraint firstItem="fDS-sV-LUx" firstAttribute="bottom" secondItem="M5r-dl-vhF" secondAttribute="bottom" constant="20" id="o5B-FO-M3I"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BTg-Bf-QSx"/>
+                    <connections>
+                        <outlet property="breaktimeslider" destination="sBU-Jf-YlB" id="MeC-rd-dpY"/>
+                        <outlet property="breaktimesliderlabel" destination="bKQ-BB-Ken" id="ysc-A0-df4"/>
+                        <outlet property="countlabel" destination="cA3-Jf-zwk" id="Wfo-sU-fKB"/>
+                        <outlet property="timedirectionswitch" destination="pF6-On-BSB" id="R3N-La-sQc"/>
+                        <outlet property="worktimeslider" destination="RxU-zM-wcb" id="kNg-1z-fpO"/>
+                        <outlet property="worktimesliderlabel" destination="mbd-FH-v9L" id="EJe-gP-aZj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WV5-Fs-fpR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -429,10 +496,10 @@
     </scenes>
     <designables>
         <designable name="SMb-uk-iD1">
-            <size key="intrinsicContentSize" width="222.66666666666666" height="37"/>
+            <size key="intrinsicContentSize" width="212.66666666666666" height="37"/>
         </designable>
         <designable name="lLz-e5-6pc">
-            <size key="intrinsicContentSize" width="52.333333333333336" height="20.333333333333332"/>
+            <size key="intrinsicContentSize" width="42.333333333333336" height="20.333333333333332"/>
         </designable>
     </designables>
     <resources>

@@ -25,11 +25,11 @@ class TimerViewController : UIViewController {
     var timeElapsed = 0
     var interval = 0
     
-    var binaryDescendingTime = 1
+    var binaryDescendingTime = GlobalOptions.boolTimeDescending
     
     var userActivityState = IntervalState.inactive
     var intervalType = IntervalType.work
-    var maxTimeInInterval = 0
+    var maxTimeInInterval : Int = GlobalOptions.intWorkSeconds
     var startDate = Date()
     
     @IBOutlet weak var playBtn : UIButton!
@@ -59,8 +59,8 @@ class TimerViewController : UIViewController {
     
     var timer = Timer()
     
-    func getTimeToDisplay() -> Int {
-        abs(binaryDescendingTime * intervalType.rawValue - (timeElapsed + interval))
+    func getTimeToDisplay(in maxTimeInInterval : Int) -> Int {
+        abs(binaryDescendingTime * maxTimeInInterval - (timeElapsed + interval))
     }
        
     func convertSecondsToTime(timeinSeconds : Int) -> String {
@@ -79,8 +79,8 @@ class TimerViewController : UIViewController {
     func updateTimerLabel() {
         print("Update Timer Label invoked")
         interval =  -Int(startDate.timeIntervalSinceNow)
-        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
-        if getTimeToDisplay() >= intervalType.rawValue
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay(in: maxTimeInInterval))
+        if getTimeToDisplay(in: maxTimeInInterval) >= maxTimeInInterval
         {
             switchToBreak()
         }
@@ -90,13 +90,14 @@ class TimerViewController : UIViewController {
         timer.invalidate()
         clearTimes()
         intervalType = IntervalType.notwork
+        maxTimeInInterval = GlobalOptions.intBreakSeconds
         maxTimeInInterval = intervalType.rawValue
         breakBtn.isHidden = true
         workBtn.isHidden = false
         playBtn.isHidden = true
         stopBtn.isHidden = true
         workBreakLbl.text = "Time to relax"
-        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay(in: maxTimeInInterval))
         playButtonPressed()
     }
     
@@ -104,13 +105,14 @@ class TimerViewController : UIViewController {
         timer.invalidate()
         clearTimes()
         intervalType = IntervalType.work
+        maxTimeInInterval = GlobalOptions.intWorkSeconds
         maxTimeInInterval = intervalType.rawValue
         breakBtn.isHidden = false
         workBtn.isHidden = true
         playBtn.isHidden = false
         stopBtn.isHidden = true
         workBreakLbl.text = "Time to work"
-        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay(in: maxTimeInInterval))
     }
     
     @objc func timerAction(_ timer: Timer) {
@@ -153,8 +155,9 @@ class TimerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(maxTimeInInterval)
         
-        maxTimeInInterval = intervalType.rawValue
+        maxTimeInInterval = GlobalOptions.intWorkSeconds
         
         stopBtn.isHidden = true
         workBtn.isHidden = true
@@ -163,7 +166,7 @@ class TimerViewController : UIViewController {
         
         
         workBreakLbl.text = "Time To Work"
-        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay())
+        timerLbl.text = convertSecondsToTime(timeinSeconds: getTimeToDisplay(in: maxTimeInInterval))
         timer.invalidate()
     }
     
